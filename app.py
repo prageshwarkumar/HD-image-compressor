@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, send_file
+from flask import send_file
 from PIL import Image
 import os
 import uuid
@@ -11,6 +12,9 @@ COMPRESSED_FOLDER = "compressed"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(COMPRESSED_FOLDER, exist_ok=True)
 
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_file('sitemap.xml')
 
 @app.route("/about")
 def about():
