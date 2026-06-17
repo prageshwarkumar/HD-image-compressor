@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Compress images online for free without losing quality. Fast, secure and mobile-friendly image compressor tool supporting JPG, PNG and WebP formats." />
+<meta name="keywords" content="image compressor, reduce image size, online image compressor, compress jpg, compress png, webp converter, free image tool" />
+<title>HD Image Compressor</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+    <div class="logo">
+        HD TOOLS
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">Compressor</a>
+
+        <a href="/about">About</a>
+
+        <a href="/contact">Contact</a>
+
+        <a href="/privacy-policy">Privacy</a>
+
+    </div>
+
+</nav>
+
+<div class="container">
+
+    <div class="hero-badge">
+    Free • Fast • No Sign-up Required
+    </div>
+
+    <h1>HD Image Compressor</h1>
+
+    <p class="subtitle">
+        Compress images without losing quality
+    </p>
+
+    <form
+    method="POST"
+    enctype="multipart/form-data"
+    id="uploadForm">
+
+        <div class="upload-box">
+
+            <input
+            type="file"
+            name="image"
+            id="imageInput"
+            accept="image/*"
+            required>
+
+            <p>
+                Drag Image Here
+                <br>
+                or Click to Select
+            </p>
+
+        </div>
+
+        <img
+        id="preview"
+        style="display:none;">
+
+        <label>
+            Target Size (KB)
+        </label>
+
+        <input
+        type="number"
+        name="target_kb"
+        placeholder="Enter Target Size"
+        required>
+
+        <button
+        type="submit"
+        id="compressBtn">
+
+            Compress & Download
+
+        </button>
+
+        <div
+        id="loader"
+        style="display:none;">
+
+            Compressing...
+
+        </div>
+
+    </form>
+
+    <div class="trust-section">
+
+    <div class="trust-item">
+        🔒 Secure Processing
+    </div>
+
+    <div class="trust-item">
+        🗑 Auto Delete Files
+    </div>
+
+    <div class="trust-item">
+        🚫 No Registration
+    </div>
+
+    <div class="trust-item">
+        ⚡ Fast Compression
+    </div>
+
+    <div class="trust-item">
+        📱 Mobile Friendly
+    </div>
+
+    <div class="trust-item">
+        🌍 Works On All Devices
+    </div>
+
+</div>
+    <div class="features">
+
+    <div class="feature-card">
+        📦 Batch Upload Soon
+    </div>
+
+    <div class="feature-card">
+        📄 PDF Tools Soon
+    </div>
+
+</div>
+</div>
+
+<script>
+
+const imageInput =
+document.getElementById("imageInput");
+
+const preview =
+document.getElementById("preview");
+
+imageInput.addEventListener(
+"change",
+function(){
+
+    const file =
+    imageInput.files[0];
+
+    if(file){
+
+        preview.src =
+        URL.createObjectURL(file);
+
+        preview.style.display =
+        "block";
+    }
+});
+
+document
+.getElementById("uploadForm")
+.addEventListener(
+"submit",
+function(){
+
+    document
+    .getElementById("loader")
+    .style.display = "block";
+
+    document
+    .getElementById("compressBtn")
+    .disabled = true;
+});
+
+</script>
+
+
+</body>
+</html>

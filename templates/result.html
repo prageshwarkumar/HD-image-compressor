@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Compression Result</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>✅ Compression Complete</h1>
+
+    <p class="subtitle">
+        Your image has been optimized successfully
+    </p>
+
+    <div class="feature-list">
+
+        <div class="feature">
+            Original
+            <br>
+            {{ original_size }} KB
+        </div>
+
+        <div class="feature">
+            Compressed
+            <br>
+            {{ compressed_size }} KB
+        </div>
+
+        <div class="feature">
+            Saved
+            <br>
+            {{ saved_percent }}%
+        </div>
+
+        <div class="feature">
+            Status
+            <br>
+            Success
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <a href="/download/{{ file_id }}">
+
+        <button>
+
+            Download Image
+
+        </button>
+
+    </a>
+
+</div>
+
+</body>
+</html>
