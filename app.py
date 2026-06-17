@@ -11,6 +11,7 @@ COMPRESSED_FOLDER = "compressed"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(COMPRESSED_FOLDER, exist_ok=True)
 
+
 @app.route("/about")
 def about():
      return render_template("about.html")
