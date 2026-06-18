@@ -12,6 +12,10 @@ COMPRESSED_FOLDER = "compressed"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(COMPRESSED_FOLDER, exist_ok=True)
 
+@app.route('/ads.txt')
+def ads():
+    return send_file('ads.txt')
+
 @app.route('/robots.txt')
 def robots():
     return send_file('robots.txt')
